@@ -1,0 +1,54 @@
+<html ng-app="myApp">
+<head>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+     -->
+    <script src="resources/js/angularjstutorial-deps.js"></script>
+<script src="controller/employeeController.js"></script>
+<script src="controllers/loginController.js"></script>
+
+<style>
+    table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body >  
+    <div ng-controller="tableCon">
+    <label>Employee Data</label><br/>
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Email ID</th>
+            <th>Age</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat='employee in employees'>
+               <td>{{employee.name}}</td>
+               <td>{{employee.email}}</td>
+               <td>{{employee.age}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/><br/>
+    <label>Project Related Data</label><br/>
+    <table>
+        <thead>
+            <th>Client</th>
+            <th>Project Name</th>
+            <th>duration</th>
+        </thead>
+        <tbody>
+            <tr ng-repeat='project in projects'>
+               <td>{{project.client}}</td>
+               <td>{{project.pname}}</td>
+               <td>{{project.duration}}</td>
+            </tr>
+        </tbody>
+    </table></br>
+    <button  type="submit" ng-click="submit()">Get Service call</button>
+    
+ </div>
+
+
+</body>
+</html>
